@@ -21,6 +21,15 @@ public class transaction {
         return recipientId;
     }
     public String getInfo(){
-        return String.format("Giver's id\t: %d\nAmount\t: %.2f\nrecipient's id\t:%d", giverId, amount, recipientId);
+        String text = "";
+        if (recipientId > 0 && giverId == -1){
+            if (amount > 0)
+                text = String.format("Deposit %.2f\n", amount);
+            else
+                text = String.format("Withdraw %.2f\n", amount);
+        }
+        else 
+            text = String.format("Transfer %.2f from %d to %d\n", amount, giverId, recipientId);
+        return text;
     }
 }

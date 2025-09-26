@@ -18,6 +18,10 @@ public class customer {
         this.email = email;
     }
 
+    public String getInfo(){
+        return String.format("Id\t: %d\nName\t: %s\nUsername\t: %s\nEmail\t: %s\nAmount\t: %.2f\nisBan\t: %b\n", id, name, username, email, amount, isBan);
+    }
+
     public int getId(){
         return id;
     }
